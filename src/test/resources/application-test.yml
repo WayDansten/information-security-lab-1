@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:sqlite:build/test-secure-api.db
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+security:
+  jwt:
+    secret: test-only-secret-that-is-at-least-32-bytes-long
