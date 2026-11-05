@@ -51,12 +51,14 @@ tasks.named('spotbugsMain') {
     reports {
         html.required = true
         xml.required = true
+        sarif.required = true
     }
 }
 
 dependencyCheck {
     failBuildOnCVSS = 7.0
-    formats = ['HTML', 'JSON']
+    formats = ['HTML', 'JSON', 'SARIF']
+    autoUpdate = System.getenv('DEPENDENCY_CHECK_AUTO_UPDATE') != 'false'
 
     nvd {
         apiKey = System.getenv('NVD_API_KEY') ?: ''
