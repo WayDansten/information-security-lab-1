@@ -20,6 +20,8 @@ jobs:
           distribution: temurin
           java-version: "21"
           cache: gradle
+      - name: Make Gradle Wrapper executable
+        run: chmod +x gradlew
       - name: Build and run tests
         run: ./gradlew clean check --no-daemon
       - name: Upload test reports
@@ -43,6 +45,8 @@ jobs:
           distribution: temurin
           java-version: "21"
           cache: gradle
+      - name: Make Gradle Wrapper executable
+        run: chmod +x gradlew
       - name: Run SpotBugs SAST
         run: ./gradlew compileJava spotbugsMain --no-daemon
       - name: Upload SpotBugs report
@@ -75,6 +79,8 @@ jobs:
           distribution: temurin
           java-version: "21"
           cache: gradle
+      - name: Make Gradle Wrapper executable
+        run: chmod +x gradlew
       - name: Restore NVD database cache
         id: nvd-cache
         uses: actions/cache/restore@v6
