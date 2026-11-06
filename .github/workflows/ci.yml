@@ -105,9 +105,9 @@ jobs:
         with:
           name: dependency-check-report
           path: |
-            build/reports/dependency-check-report.html
-            build/reports/dependency-check-report.json
-            build/reports/dependency-check-report.sarif
+            build/reports/dependency-check/dependency-check-report.html
+            build/reports/dependency-check/dependency-check-report.json
+            build/reports/dependency-check/dependency-check-report.sarif
           if-no-files-found: warn
       - name: Publish Dependency-Check results to GitHub Code Scanning
         if: always() && hashFiles('build/reports/dependency-check-report.sarif') != ''
