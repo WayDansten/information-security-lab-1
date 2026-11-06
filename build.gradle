@@ -59,6 +59,8 @@ dependencyCheck {
     failBuildOnCVSS = 7.0
     formats = ['HTML', 'JSON', 'SARIF']
     autoUpdate = System.getenv('DEPENDENCY_CHECK_AUTO_UPDATE') != 'false'
+    scanConfigurations = ['runtimeClasspath']
+    suppressionFile = 'config/dependency-check-suppressions.xml'
 
     nvd {
         apiKey = System.getenv('NVD_API_KEY') ?: ''
