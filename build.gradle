@@ -59,7 +59,9 @@ dependencyCheck {
     failBuildOnCVSS = 7.0
     formats = ['HTML', 'JSON', 'SARIF']
     autoUpdate = System.getenv('DEPENDENCY_CHECK_AUTO_UPDATE') != 'false'
+    scanDependencies = true
     scanConfigurations = ['runtimeClasspath']
+    skipTestGroups = false
     suppressionFile = 'config/dependency-check-suppressions.xml'
 
     nvd {

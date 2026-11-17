@@ -92,7 +92,7 @@ jobs:
         env:
           NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
           DEPENDENCY_CHECK_AUTO_UPDATE: ${{ steps.nvd-cache.outputs.cache-hit != 'true' }}
-        run: ./gradlew dependencyCheckAnalyze --info --stacktrace
+        run: ./gradlew dependencyCheckAnalyze --no-daemon
       - name: Save NVD database cache
         if: always()
         uses: actions/cache/save@v6
