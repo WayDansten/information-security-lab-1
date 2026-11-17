@@ -36,6 +36,97 @@ dependencies {
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
+
+    constraints {
+        implementation('com.fasterxml.jackson.core:jackson-databind') {
+            version { strictly('2.21.5') }
+            because 'Security update based on Dependency-Check report'
+        }
+        implementation('org.apache.logging.log4j:log4j-api') {
+            version { strictly('2.25.5') }
+            because 'Security update based on Dependency-Check report'
+        }
+        implementation('org.apache.logging.log4j:log4j-to-slf4j') {
+            version { strictly('2.25.5') }
+            because 'Security update based on Dependency-Check report'
+        }
+        implementation('org.springframework:spring-aop') {
+            version { strictly('6.2.20') }
+            because 'Security update based on Dependency-Check report'
+        }
+        implementation('org.springframework:spring-aspects') {
+            version { strictly('6.2.20') }
+            because 'Security update based on Dependency-Check report'
+        }
+        implementation('org.springframework:spring-beans') {
+            version { strictly('6.2.20') }
+            because 'Security update based on Dependency-Check report'
+        }
+        implementation('org.springframework:spring-context') {
+            version { strictly('6.2.20') }
+            because 'Security update based on Dependency-Check report'
+        }
+        implementation('org.springframework:spring-core') {
+            version { strictly('6.2.20') }
+            because 'Security update based on Dependency-Check report'
+        }
+        implementation('org.springframework:spring-expression') {
+            version { strictly('6.2.20') }
+            because 'Security update based on Dependency-Check report'
+        }
+        implementation('org.springframework:spring-jcl') {
+            version { strictly('6.2.20') }
+            because 'Security update based on Dependency-Check report'
+        }
+        implementation('org.springframework:spring-jdbc') {
+            version { strictly('6.2.20') }
+            because 'Security update based on Dependency-Check report'
+        }
+        implementation('org.springframework:spring-orm') {
+            version { strictly('6.2.20') }
+            because 'Security update based on Dependency-Check report'
+        }
+        implementation('org.springframework:spring-tx') {
+            version { strictly('6.2.20') }
+            because 'Security update based on Dependency-Check report'
+        }
+        implementation('org.springframework:spring-web') {
+            version { strictly('6.2.20') }
+            because 'Security update based on Dependency-Check report'
+        }
+        implementation('org.springframework:spring-webmvc') {
+            version { strictly('6.2.20') }
+            because 'Security update based on Dependency-Check report'
+        }
+        implementation('org.springframework.data:spring-data-jpa') {
+            version { strictly('3.5.14') }
+            because 'Security update based on Dependency-Check report'
+        }
+        implementation('org.springframework.security:spring-security-config') {
+            version { strictly('6.5.12') }
+            because 'Security update based on Dependency-Check report'
+        }
+        implementation('org.springframework.security:spring-security-core') {
+            version { strictly('6.5.12') }
+            because 'Security update based on Dependency-Check report'
+        }
+        implementation('org.springframework.security:spring-security-crypto') {
+            version { strictly('6.5.12') }
+            because 'Security update based on Dependency-Check report'
+        }
+        implementation('org.springframework.security:spring-security-web') {
+            version { strictly('6.5.12') }
+            because 'Security update based on Dependency-Check report'
+        }
+        implementation('org.apache.tomcat.embed:tomcat-embed-core') {
+            version { strictly('10.1.60') }
+            because 'Security update based on Dependency-Check report'
+        }
+        implementation('org.apache.tomcat.embed:tomcat-embed-websocket') {
+            version { strictly('10.1.60') }
+            because 'Security update based on Dependency-Check report'
+        }
+    }
 }
 
 tasks.named('test') {
