@@ -21,30 +21,11 @@ configurations {
     }
 }
 
-/*
- * Targeted overrides for vulnerable third-party libraries found in the
- * supplied Dependency-Check report. Spring Boot 3.5.16 remains unchanged.
- *
- * IMPORTANT:
- * Spring Framework 6.2.20, Spring Security 6.5.12 and Spring Data JPA
- * 3.5.14 are listed by Spring as Enterprise-only fixes. Do not force these
- * versions on a public-only build: the artifacts may not be resolvable
- * without the Spring Enterprise repository and entitlement.
- *
- * The Spring CVEs therefore cannot all be fixed while staying on the
- * public Spring Boot 3.5.16 dependency set. See the notes accompanying this
- * file and consider a Spring Enterprise subscription or a major Boot upgrade.
- */
 ext {
-    // Spring Boot 3.5 uses these properties to manage the corresponding BOMs.
-    // Tomcat 10.1.59 contains fixes for the Tomcat CVEs in the supplied report.
     set('tomcat.version', '10.1.59')
 
-    // CVE-2026-54515 is fixed in Jackson Databind 2.21.5.
     set('jackson-bom.version', '2.21.5')
 
-    // Log4j 2.25.5 addresses CVE-2026-49844; it also includes the
-    // Log4j 2.25.4 fix for CVE-2026-34477.
     set('log4j2.version', '2.25.5')
 }
 
