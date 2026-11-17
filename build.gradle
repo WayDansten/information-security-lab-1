@@ -37,94 +37,42 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
 
-    constraints {
-        implementation('com.fasterxml.jackson.core:jackson-databind') {
-            version { strictly('2.21.5') }
-            because 'Security update based on Dependency-Check report'
+
+}
+
+dependencyManagement {
+    dependencies {
+        dependency 'com.fasterxml.jackson.core:jackson-databind:2.21.5'
+        dependency 'org.apache.logging.log4j:log4j-api:2.25.5'
+        dependency 'org.apache.logging.log4j:log4j-to-slf4j:2.25.5'
+
+        dependencySet(group: 'org.springframework', version: '6.2.20') {
+            entry 'spring-aop'
+            entry 'spring-aspects'
+            entry 'spring-beans'
+            entry 'spring-context'
+            entry 'spring-core'
+            entry 'spring-expression'
+            entry 'spring-jcl'
+            entry 'spring-jdbc'
+            entry 'spring-orm'
+            entry 'spring-tx'
+            entry 'spring-web'
+            entry 'spring-webmvc'
         }
-        implementation('org.apache.logging.log4j:log4j-api') {
-            version { strictly('2.25.5') }
-            because 'Security update based on Dependency-Check report'
+        dependency 'org.springframework.data:spring-data-jpa:3.5.14'
+
+        dependencySet(group: 'org.springframework.security', version: '6.5.12') {
+            entry 'spring-security-config'
+            entry 'spring-security-core'
+            entry 'spring-security-crypto'
+            entry 'spring-security-web'
         }
-        implementation('org.apache.logging.log4j:log4j-to-slf4j') {
-            version { strictly('2.25.5') }
-            because 'Security update based on Dependency-Check report'
-        }
-        implementation('org.springframework:spring-aop') {
-            version { strictly('6.2.20') }
-            because 'Security update based on Dependency-Check report'
-        }
-        implementation('org.springframework:spring-aspects') {
-            version { strictly('6.2.20') }
-            because 'Security update based on Dependency-Check report'
-        }
-        implementation('org.springframework:spring-beans') {
-            version { strictly('6.2.20') }
-            because 'Security update based on Dependency-Check report'
-        }
-        implementation('org.springframework:spring-context') {
-            version { strictly('6.2.20') }
-            because 'Security update based on Dependency-Check report'
-        }
-        implementation('org.springframework:spring-core') {
-            version { strictly('6.2.20') }
-            because 'Security update based on Dependency-Check report'
-        }
-        implementation('org.springframework:spring-expression') {
-            version { strictly('6.2.20') }
-            because 'Security update based on Dependency-Check report'
-        }
-        implementation('org.springframework:spring-jcl') {
-            version { strictly('6.2.20') }
-            because 'Security update based on Dependency-Check report'
-        }
-        implementation('org.springframework:spring-jdbc') {
-            version { strictly('6.2.20') }
-            because 'Security update based on Dependency-Check report'
-        }
-        implementation('org.springframework:spring-orm') {
-            version { strictly('6.2.20') }
-            because 'Security update based on Dependency-Check report'
-        }
-        implementation('org.springframework:spring-tx') {
-            version { strictly('6.2.20') }
-            because 'Security update based on Dependency-Check report'
-        }
-        implementation('org.springframework:spring-web') {
-            version { strictly('6.2.20') }
-            because 'Security update based on Dependency-Check report'
-        }
-        implementation('org.springframework:spring-webmvc') {
-            version { strictly('6.2.20') }
-            because 'Security update based on Dependency-Check report'
-        }
-        implementation('org.springframework.data:spring-data-jpa') {
-            version { strictly('3.5.14') }
-            because 'Security update based on Dependency-Check report'
-        }
-        implementation('org.springframework.security:spring-security-config') {
-            version { strictly('6.5.12') }
-            because 'Security update based on Dependency-Check report'
-        }
-        implementation('org.springframework.security:spring-security-core') {
-            version { strictly('6.5.12') }
-            because 'Security update based on Dependency-Check report'
-        }
-        implementation('org.springframework.security:spring-security-crypto') {
-            version { strictly('6.5.12') }
-            because 'Security update based on Dependency-Check report'
-        }
-        implementation('org.springframework.security:spring-security-web') {
-            version { strictly('6.5.12') }
-            because 'Security update based on Dependency-Check report'
-        }
-        implementation('org.apache.tomcat.embed:tomcat-embed-core') {
-            version { strictly('10.1.60') }
-            because 'Security update based on Dependency-Check report'
-        }
-        implementation('org.apache.tomcat.embed:tomcat-embed-websocket') {
-            version { strictly('10.1.60') }
-            because 'Security update based on Dependency-Check report'
+
+        dependencySet(group: 'org.apache.tomcat.embed', version: '10.1.60') {
+            entry 'tomcat-embed-core'
+            entry 'tomcat-embed-el'
+            entry 'tomcat-embed-websocket'
         }
     }
 }
